@@ -31,7 +31,7 @@ const Process = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-gradient-to-b from-background to-navy/50">
+    <section ref={ref} id="process" className="py-24 px-6 bg-gradient-to-b from-background to-navy/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
