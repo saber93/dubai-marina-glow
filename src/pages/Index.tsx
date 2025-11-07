@@ -8,6 +8,7 @@ import Stats from "@/components/Stats";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Gallery />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 };
