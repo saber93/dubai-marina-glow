@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -11,24 +12,28 @@ import {
 
 const projects = [
   {
+    id: "azimut-refit",
     name: "85ft Azimut Refit",
     scope: "Complete Engine Overhaul",
     description: "Full mechanical restoration with custom performance tuning",
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80",
   },
   {
+    id: "sunseeker-restoration",
     name: "Sunseeker Predator",
     scope: "Hull Restoration & Paint",
     description: "Precision gelcoat repair and luxury finish application",
     image: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=800&q=80",
   },
   {
+    id: "gulf-craft-upgrade",
     name: "Gulf Craft Majesty",
     scope: "Navigation Systems Upgrade",
     description: "State-of-the-art electronics and entertainment installation",
     image: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?w=800&q=80",
   },
   {
+    id: "princess-restoration",
     name: "Princess V58",
     scope: "Interior Restoration",
     description: "Premium deck refinishing and cabin modernization",
@@ -38,6 +43,7 @@ const projects = [
 
 const FeaturedProjects = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
@@ -72,7 +78,10 @@ const FeaturedProjects = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Card className="overflow-hidden bg-navy/80 border-primary/20 hover:border-primary/40 smooth-transition">
+                    <Card 
+                      onClick={() => navigate(`/project/${project.id}`)}
+                      className="overflow-hidden bg-navy/80 border-primary/20 hover:border-primary/40 smooth-transition cursor-pointer"
+                    >
                       <CardContent className="p-0">
                         <div className="relative h-64 overflow-hidden group">
                           <motion.img

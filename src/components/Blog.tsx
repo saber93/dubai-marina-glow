@@ -1,22 +1,26 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
 const articles = [
   {
+    id: "hull-antifouling",
     title: "Top 5 Signs Your Hull Needs Antifouling",
     excerpt: "Learn the critical indicators that your yacht's hull requires professional attention and maintenance.",
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
     date: "March 2024",
   },
   {
+    id: "engine-diagnostics",
     title: "Why Regular Engine Diagnostics Save You Thousands",
     excerpt: "Discover how preventive maintenance protects your investment and ensures peak performance.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80",
     date: "February 2024",
   },
   {
+    id: "dubai-yachting",
     title: "How Dubai Became the Heart of Luxury Yachting",
     excerpt: "Explore the evolution of Dubai's marine industry and its world-class yacht services.",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
@@ -26,6 +30,7 @@ const articles = [
 
 const Blog = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
@@ -53,7 +58,10 @@ const Blog = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Card className="h-full overflow-hidden bg-navy/60 border-primary/20 hover:border-primary/50 smooth-transition group cursor-pointer">
+              <Card 
+                onClick={() => navigate(`/blog/${article.id}`)}
+                className="h-full overflow-hidden bg-navy/60 border-primary/20 hover:border-primary/50 smooth-transition group cursor-pointer"
+              >
                 <CardContent className="p-0">
                   <div className="relative h-56 overflow-hidden">
                     <motion.img

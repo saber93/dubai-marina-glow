@@ -87,19 +87,31 @@ const Header = () => {
             ))}
           </motion.nav>
 
-          {/* CTA Button & Mobile Menu */}
+          {/* CTA Buttons & Mobile Menu */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-3"
           >
+            {/* Call Button - Desktop */}
+            <Button
+              asChild
+              variant="outline"
+              size="icon"
+              className="hidden sm:flex border-primary/50 text-primary hover:bg-primary/20 hover:border-primary"
+            >
+              <a href="tel:+971501234567" aria-label="Call us">
+                <Phone className="w-4 h-4" />
+              </a>
+            </Button>
+
+            {/* Book Service Button - Desktop */}
             <Button
               onClick={() => scrollToSection("#contact")}
               variant="default"
               className="hidden sm:flex bg-primary text-primary-foreground hover:bg-primary/90 animate-glow"
             >
-              <Phone className="w-4 h-4 mr-2" />
               Book Service
             </Button>
 
@@ -130,11 +142,23 @@ const Header = () => {
                     </button>
                   ))}
 
+                  {/* Call Button - Mobile */}
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-primary/50 text-primary hover:bg-primary/20"
+                  >
+                    <a href="tel:+971501234567">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now: +971 50 123 4567
+                    </a>
+                  </Button>
+
+                  {/* Book Service Button - Mobile */}
                   <Button
                     onClick={() => scrollToSection("#contact")}
-                    className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
                   >
-                    <Phone className="w-4 h-4 mr-2" />
                     Book Service
                   </Button>
                 </div>

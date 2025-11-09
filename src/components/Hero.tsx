@@ -1,27 +1,35 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Anchor } from "lucide-react";
 import heroImage from "@/assets/hero-yacht.jpg";
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  
+  // Parallax effects based on scroll
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const scale = useTransform(scrollY, [0, 500], [1, 1.2]);
+
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Parallax & Overlay */}
+      <motion.div 
+        className="absolute inset-0 z-0"
+        style={{ y }}
+      >
         <motion.img
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          style={{ scale }}
           src={heroImage}
           alt="Luxury yachts at Dubai Marina"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-overlay" />
-      </div>
+      </motion.div>
 
       {/* Wave & Light Motion Overlays */}
       <motion.div
@@ -31,8 +39,11 @@ const Hero = () => {
         className="absolute inset-0 z-[1] bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none"
       />
       
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      {/* Content with Scroll Fade */}
+      <motion.div 
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        style={{ opacity }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +93,7 @@ const Hero = () => {
             Trusted by yacht owners across the UAE since 2008
           </motion.p>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll Indicator with Glow */}
       <motion.div
