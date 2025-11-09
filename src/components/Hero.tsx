@@ -23,6 +23,14 @@ const Hero = () => {
         <div className="absolute inset-0 gradient-overlay" />
       </div>
 
+      {/* Wave & Light Motion Overlays */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-0 z-[1] bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none"
+      />
+      
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <motion.div
@@ -56,6 +64,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col items-center gap-4"
         >
           <Button
             onClick={scrollToContact}
@@ -64,17 +73,32 @@ const Hero = () => {
           >
             Request Maintenance
           </Button>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="text-sm text-muted-foreground"
+          >
+            Trusted by yacht owners across the UAE since 2008
+          </motion.p>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator with Glow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center gap-2"
       >
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center p-2">
+        <motion.p
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-sm text-primary uppercase tracking-widest"
+        >
+          Explore
+        </motion.p>
+        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center p-2 animate-glow">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
