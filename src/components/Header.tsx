@@ -16,7 +16,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
-  
+
   const headerBg = useTransform(
     scrollY,
     [0, 100],
@@ -47,9 +47,8 @@ const Header = () => {
   return (
     <motion.header
       style={{ backgroundColor: headerBg }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${
-        isScrolled ? "shadow-lg backdrop-blur-md" : ""
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${isScrolled ? "shadow-lg backdrop-blur-md" : ""
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -101,7 +100,7 @@ const Header = () => {
               size="icon"
               className="hidden sm:flex border-primary/50 text-primary hover:bg-primary/20 hover:border-primary"
             >
-              <a href="tel:+971501234567" aria-label="Call us">
+              <a href="tel:+971568101108" aria-label="Call us">
                 <Phone className="w-4 h-4" />
               </a>
             </Button>
@@ -148,9 +147,9 @@ const Header = () => {
                     variant="outline"
                     className="w-full border-primary/50 text-primary hover:bg-primary/20"
                   >
-                    <a href="tel:+971501234567">
+                    <a href="tel:+971568101108">
                       <Phone className="w-4 h-4 mr-2" />
-                      Call Now: +971 50 123 4567
+                      Call Now: +971 56 810 1108
                     </a>
                   </Button>
 

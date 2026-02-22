@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <button 
+            <button
               onClick={scrollToTop}
               className="flex items-center gap-3 mb-4 group cursor-pointer"
             >
@@ -29,10 +29,10 @@ const Footer = () => {
               </div>
             </button>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Expert yacht and boat maintenance, repair, and upgrades. 
+              Expert yacht and boat maintenance, repair, and upgrades.
               Where precision engineering meets the sea — crafted with excellence in Dubai.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
               <a href="#" className="w-10 h-10 rounded-full bg-card/50 flex items-center justify-center hover:bg-primary/20 hover:text-primary smooth-transition">
@@ -52,7 +52,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection("about")}
                   className="text-muted-foreground hover:text-primary smooth-transition text-left"
                 >
@@ -60,7 +60,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection("services")}
                   className="text-muted-foreground hover:text-primary smooth-transition text-left"
                 >
@@ -68,7 +68,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection("process")}
                   className="text-muted-foreground hover:text-primary smooth-transition text-left"
                 >
@@ -76,7 +76,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection("gallery")}
                   className="text-muted-foreground hover:text-primary smooth-transition text-left"
                 >
@@ -84,7 +84,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection("contact")}
                   className="text-muted-foreground hover:text-primary smooth-transition text-left"
                 >
@@ -104,11 +104,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm">+971 4 XXX XXXX</span>
+                <span className="text-sm">+971 56 810 1108</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm">info@yachtcare.ae</span>
+                <span className="text-sm">info@michealmarineservices.com</span>
               </li>
             </ul>
           </div>

@@ -19,10 +19,20 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Construct WhatsApp message
+    const message = `*New Service Inquiry*\n\n*Name:* ${formData.name}\n*Yacht/Model:* ${formData.yachtType}\n*Message:* ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/971568101108?text=${encodedMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
     toast({
-      title: "Message Received",
-      description: "We'll contact you within 24 hours to discuss your yacht's needs.",
+      title: "Redirecting to WhatsApp",
+      description: "Opening a secure chat with our team to discuss your yacht's needs.",
     });
+
     setFormData({ name: "", yachtType: "", message: "" });
   };
 
@@ -118,7 +128,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-2">Phone</h3>
-                <p className="text-muted-foreground">+971 4 XXX XXXX</p>
+                <p className="text-muted-foreground">+971 56 810 1108</p>
               </div>
             </div>
 
@@ -128,7 +138,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-muted-foreground">info@yachtcare.ae</p>
+                <p className="text-muted-foreground">info@michealmarineservices.com</p>
               </div>
             </div>
 

@@ -8,7 +8,7 @@ const WhatsAppButton = () => {
   const [isMinimized, setIsMinimized] = useState(false);
 
   // WhatsApp link with pre-filled message
-  const phoneNumber = "971XXXXXXXXX"; // Replace with actual number
+  const phoneNumber = "971568101108"; // Replace with actual number
   const message = encodeURIComponent(
     "Hi! I'm interested in your yacht maintenance services. Can you help me?"
   );
@@ -50,7 +50,7 @@ const WhatsAppButton = () => {
           >
             <MessageCircle className="w-8 h-8 text-white" />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse" />
-            
+
             {/* Pulse effect */}
             <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
           </motion.button>
