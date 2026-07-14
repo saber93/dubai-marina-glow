@@ -12,6 +12,7 @@ import {
     Settings,
     Zap,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 // Image imports
 import electricalImg from "@/assets/serv/electrical.avif";
@@ -30,7 +31,7 @@ import paintingImg from "@/assets/serv/painting.avif";
 
 export interface Service {
     id: string;
-    icon: any;
+    icon: LucideIcon;
     title: string;
     description: string;
     longDescription: string;

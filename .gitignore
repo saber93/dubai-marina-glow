@@ -11,6 +11,15 @@ node_modules
 dist
 dist-ssr
 *.local
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+credentials*.json
 
 # Editor directories and files
 .vscode/*
