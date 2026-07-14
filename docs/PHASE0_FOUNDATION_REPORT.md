@@ -2,6 +2,11 @@
 
 Status: Draft-only foundation; no production release approved.
 
+- Draft PR: `https://github.com/saber93/dubai-marina-glow/pull/2`
+- Deploy Preview: `https://deploy-preview-2--michael-maintenance.netlify.app/`
+- Restricted baseline evidence: `BASE-TECH-001` /
+  `PHASE0-ARCHIVE-MICHEALMARINESERVICES-COM-20260714`
+
 ## Preserved baseline
 
 - Production: `https://michealmarineservices.com/`
@@ -22,6 +27,11 @@ is not imported by the runtime application.
 No route was restored. No sitemap member, redirect, consolidation, identity
 claim, authority asset, network link, language alternate or production behavior
 was added.
+
+The Deploy Preview crawl confirmed the homepage remains direct `200`, all 20
+source-defined inner routes remain real `404`, an unknown route remains real
+`404`, and `sitemap.xml` remains a one-URL production-homepage sitemap. GitHub
+Quality and Netlify Deploy Preview checks passed.
 
 ## Evidence and blockers
 
